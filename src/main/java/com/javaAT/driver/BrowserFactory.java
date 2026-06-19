@@ -2,6 +2,7 @@ package com.javaAT.driver;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
@@ -12,7 +13,9 @@ public class BrowserFactory {
         switch (browser) {
 
             case CHROME:
-                return new ChromeDriver();
+                ChromeOptions chromeOptions = new ChromeOptions();
+                chromeOptions.addArguments("--start-maximized");
+                return new ChromeDriver(chromeOptions);
 
             case EDGE:
                 return new EdgeDriver();

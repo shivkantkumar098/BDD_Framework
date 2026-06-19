@@ -6,8 +6,8 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(
         features = "src/test/resources/features",
-        glue = {"rev.project.stepDefinitions", "rev.project.hooks"},
-        plugin = {"pretty", "html:target/cucumber-reports/cucumber.html", "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"},
+        glue = {"com.javaAT.stepdefinitions", "com.javaAT.hooks"},
+        plugin = {"pretty", "html:target/cucumber-reports/cucumber.html"},
         monochrome = true
 )
 public class TestRunner extends AbstractTestNGCucumberTests {

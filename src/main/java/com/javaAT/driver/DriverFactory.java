@@ -11,8 +11,11 @@ public class DriverFactory {
         Browser browser = Browser.valueOf(browserName.toUpperCase());
 
         driver.set(BrowserFactory.getBrowser(browser));
-
-        getDriver().manage().window().maximize();
+        
+        // Only maximize if not already done in browser options
+        if (getDriver() != null && !browserName.equalsIgnoreCase("chrome")) {
+            getDriver().manage().window().maximize();
+        }
     }
 
     public static WebDriver getDriver() {

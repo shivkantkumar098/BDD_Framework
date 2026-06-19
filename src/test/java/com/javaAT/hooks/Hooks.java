@@ -20,7 +20,7 @@ public class Hooks {
                 ConfigReader.get("browser"));
 
         DriverFactory.getDriver()
-                .get(ConfigReader.get("url"));
+                .get(ConfigReader.get("baseUrl"));
     }
 
     @After
